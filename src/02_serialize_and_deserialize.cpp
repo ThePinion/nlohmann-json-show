@@ -5,14 +5,11 @@
 using json = nlohmann::json;
 
 int main() {
-    // Parse JSON from a string
     std::string str = R"({"happy": true, "pi": 3.141})";
     json j = json::parse(str);
 
-    // Change a value
     j["happy"] = false;
 
-    // Serialize to string
     std::string serialized = j.dump(4);  
     std::cout << serialized << std::endl;
     
